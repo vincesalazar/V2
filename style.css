@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lato&family=Open+Sans&family=PT+Sans+Narrow&family=Roboto&display=swap');
+FONTS {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Amatic SC', cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 1000;
+    transition: opacity .3s;
+}
+
+.landing {
+    min-height: 100vh;
+    background-color: #222222;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .name {
+    position: absolute;
+    top: 3.5%;
+    left: 2%;
+    font-size: 2.15vw;
+    color: #eeeeee;
+    font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: 2px;
+}
+
+.landing .top-right {
+    position: absolute;
+    top: 3.5%;
+    right: 2%;
+    font-size: 1.5vw;
+    color: #eeeeee;
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing .middle {}
+
+.landing .middle .card {
+    width: 100vw;
+    word-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .middle .card .left {
+    margin: 3rem;
+}
+
+.landing .middle .card .left .phone-container {
+    position: relative;
+    width: 15vw;
+    height: 65vh;
+}
+
+.landing .middle .card .right {
+    width: 50vw;
+}
+
+.landing .middle .card .right .topic {
+    font-size: 2.4vw;
+    font-family: 'PT Sans Narrow', sans-serif;
+    position: relative;
+    color: white;
+}
+
+.landing .middle .card .right .description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5vw;
+    color: #eeeeee;
+}
+
+.landing .middle .card .right .description a {
+    color: #06AED5;
+}
+
+.landing .email {
+    position: absolute;
+    bottom: 3.5%;
+    left: 2%;
+    font-family: 'Lato', sans-serif;
+}
+
+.landing .email a {
+    font-size: 1.5vw;
+    color: #f3f3f3;
+}
+
+.landing .git-code {
+    position: absolute;
+    bottom: 3.5%;
+    right: 2%;
+    width: 30vw;
+    font-size: 1.45vw;
+    display: flex;
+    justify-content: space-between;
+    color: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.landing .git-code a:nth-child(1) {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 769px) {
+    .phone-container {
+        display: none;
+    }
+}
