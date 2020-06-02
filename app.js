@@ -1,3 +1,5 @@
+var max768;
+
 window.addEventListener('load', () => {
     // LOADING PAGE
     var loadingPage = document.querySelector(".loading-page");
@@ -13,7 +15,7 @@ window.addEventListener('load', () => {
         duration: 3,
         ease: "steps(10)"
     })
-    tl.fromTo("#cardTwo .description", {
+    tl.fromTo("#intro .description", {
         opacity: 0,
         y: 100
     }, {
@@ -54,15 +56,15 @@ window.addEventListener('load', () => {
     }, "<");
     tl.fromTo(".modal-container", { display: "none" }, { display: "flex" }, "<")
     tl.fromTo(".projects", { display: "none" }, { display: "block" }, "<")
-    tl.to("#cardTwo .topic", {
+    tl.to("#intro .topic", {
         opacity: 0,
         x: 100
-    }, ">+10");
-    tl.to("#cardTwo .description", {
+    }, ">+12");
+    tl.to("#intro .description", {
         opacity: 0,
         x: -100
     }, "<")
-    tl.to("#cardTwo", {
+    tl.to("#intro", {
         display: "none"
     }, ">");
     console.log("THIS IS THE DURATION ---" +
@@ -70,77 +72,132 @@ window.addEventListener('load', () => {
     // END LANDING ANIME
     // START OF CAROUSEL ANIME
     var ttl = gsap.timeline({
-        delay: 14.8,
+        delay: 16.8,
         repeat: 2000,
         repeatDelay: 0,
     });
-    ttl.to("#cardOne", {
+    ttl.to("#taskMan", {
         display: "flex"
     });
-    ttl.fromTo("#cardOne .right", {
+    ttl.fromTo("#taskMan .right", {
         opacity: 0,
         x: 100
     }, {
         opacity: 1,
         x: 0
     }, "<");
-    ttl.fromTo("#cardOne .left", {
+    ttl.fromTo("#taskMan .left", {
         opacity: 0,
         x: -100
     }, {
         opacity: 1,
         x: 0
     }, "<");
-    ttl.to("#cardOne .left", {
+    ttl.to("#taskMan .left", {
         opacity: 0,
         x: -100
     }, ">+8");
-    ttl.to("#cardOne .right", {
+    ttl.to("#taskMan .right", {
         opacity: 0,
         x: 100
     }, "<");
-    ttl.to("#cardOne", {
+    ttl.to("#taskMan", {
         display: "none"
     }, ">");
-    ttl.to("#cardTwo", {
+    ttl.to("#inso", { display: "flex" }, ">");
+    ttl.fromTo("#inso .left", { x: -100, opacity: 0 }, { x: 0, opacity: 1 }, "<");
+    ttl.fromTo("#inso .right", { x: 100, opacity: 0 }, { x: 0, opacity: 1 }, "<");
+    ttl.to("#inso .left", { x: -100, opacity: 0 }, ">+8");
+    ttl.to("#inso .right", { x: 100, opacity: 0 }, "<");
+    ttl.to("#inso", { display: "none" }, ">")
+        // ADD ANOTHER CARD RIGHT UNDER THIS HERE
+    ttl.to("#intro", {
         display: "flex"
     }, ">");
-    ttl.to("#cardTwo .topic", {
+    ttl.to("#intro .topic", {
         opacity: 1,
         x: 0
     }, ">");
-    ttl.to("#cardTwo .description", {
+    ttl.to("#intro .description", {
         opacity: 1,
         x: 0
     }, "<");
-    ttl.to("#cardTwo .topic", {
+    ttl.to("#intro .topic", {
         x: -50,
         rotate: -2,
         opacity: 0
-    }, ">+7");
-    ttl.to("#cardTwo .description", {
-        x: 50,
-        rotate: -2,
-        opacity: 0
-    }, "<")
+    }, ">+10");
+    ttl.to("#intro .description", {
+            x: 50,
+            rotate: -2,
+            opacity: 0
+        }, "<")
+        // END OF CAROUSEL
+        // LIGHTS FLUTTER OUT ANIME -- FIRST SCROLL SCENE
     var controller = new ScrollMagic.Controller();
-    var fsl = gsap.timeline({ ease: "none" });
-    fsl.to(".name", { opacity: 0 });
-    fsl.to(".git-code", { opacity: 0 }, "<");
-    fsl.to(".top-right a", { opacity: 0 }, "<");
-    fsl.to(".email a", { opacity: 0 }, "<");
-    fsl.to(".landing", { height: "30vh" })
+    var fsl = gsap.timeline({});
+    fsl.to(".name", { opacity: 0, ease: "bounce", duration: .3 });
+    fsl.to(".git-code", { opacity: 0, ease: "bounce", duration: .6 }, "<");
+    fsl.to(".top-right", { opacity: 0, ease: "bounce", duration: .9 }, "<");
+    fsl.to(".email", { opacity: 0, ease: "bounce", duration: .7 }, "<");
     var scene = new ScrollMagic.Scene({
             triggerElement: '.top-right',
             triggerHook: 0,
             duration: "",
         })
         .addIndicators({
-            colorTrigger: 'red', //transparent
-            colorStart: 'red',
+            colorTrigger: 'transparent', //transparent
+            colorStart: 'transparent',
             colorEnd: 'transparent',
             indent: 5
         })
         .setTween(fsl)
         .addTo(controller);
+    // END FIRST SCROLL SCENE
+    // FOR SECTION HEADERS ANIME -- SECOND SCROLL SCENE
+    var th = document.querySelectorAll(".t-h");
+    th.forEach((e, i) => {
+            const headers = document.querySelectorAll("#section-header");
+            let htl = gsap.timeline();
+            htl.fromTo(headers[i], { opacity: 0, y: 100 }, { opacity: 1, y: 0 });
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: e,
+                    triggerHook: .4,
+                    duration: '',
+                })
+                .addIndicators({
+                    colorTrigger: 'transparent', //transparent
+                    colorStart: 'transparent',
+                    colorEnd: 'transparent',
+                    indent: 5
+                })
+                .setTween(htl)
+                .addTo(controller);
+        })
+        // END SECOND SCENE
+        // FOR PROJECTS LEFT AND RIGHT -- THIRD SCROLL SCENE
+    var trigger = document.querySelectorAll(".trigger");
+    console.log("this is the query selector ALL .trigger" + ' ' + trigger);
+    trigger.forEach((e, i) => {
+        const projects = document.querySelectorAll(".project");
+        const lefts = document.querySelectorAll(".projects .left");
+        const rights = document.querySelectorAll(".projects .right");
+        const ftl = gsap.timeline();
+        ftl.fromTo(lefts[i], { x: -100, opacity: 0 }, { x: 0, opacity: 1 });
+        ftl.fromTo(rights[i], { x: 100, opacity: 0 }, { x: 0, opacity: 1 }, "<");
+        var scene = new ScrollMagic.Scene({
+                triggerElement: e,
+                triggerHook: .08,
+                duration: '',
+            })
+            .addIndicators({
+                colorTrigger: 'transparent', //transparent
+                colorStart: 'transparent',
+                colorEnd: 'transparent',
+                indent: 5
+            })
+            .setTween(ftl)
+            .addTo(controller);
+    });
+    // END OF THIRD SCENE
 });
