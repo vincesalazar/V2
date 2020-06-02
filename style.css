@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lato&family=Open+Sans&family=PT+Sans+Narrow&family=Permanent+Marker&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Indie+Flower&family=Lato&family=Open+Sans&family=PT+Sans+Narrow&family=Permanent+Marker&family=Roboto&family=Shadows+Into+Light+Two&display=swap');
 FONTS {
     font-family: 'Amatic SC', cursive;
     font-family: 'Lato', sans-serif;
@@ -6,6 +6,8 @@ FONTS {
     font-family: 'Permanent Marker', cursive;
     font-family: 'PT Sans Narrow', sans-serif;
     font-family: 'Roboto', sans-serif;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-family: 'Indie Flower', cursive;
 }
 
 * {
@@ -30,8 +32,32 @@ span[id="red"] {
     color: #EA526F;
 }
 
+span[id="red"]:hover {
+    opacity: .7;
+}
+
 span[id="blue"] {
     color: #06AED5;
+}
+
+span[id="blue"]:hover {
+    opacity: .7;
+}
+
+span[id="yellow"] {
+    color: #FFBA49;
+}
+
+span[id="yellow"]:hover {
+    opacity: .7;
+}
+
+span[id="turq"] {
+    color: #00D9C0;
+}
+
+span[id="turq"]:hover {
+    opacity: .7;
 }
 
 body {
@@ -70,11 +96,10 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 3.5%;
     left: 2%;
-    font-size: 2.15vw;
-    color: #eeeeee;
-    font-family: 'PT Sans Narrow', sans-serif;
-    letter-spacing: 2px;
+    font-size: 2vw;
+    color: #e4e4e4;
     cursor: default;
+    font-family: 'Permanent Marker', sans-serif;
 }
 
 .landing .top-right {
@@ -84,6 +109,8 @@ body::-webkit-scrollbar {
     font-size: 1.5vw;
     color: #fffffffd;
     font-family: 'Roboto', sans-serif;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-family: "Permanent Marker";
 }
 
 .landing .top-right a:hover {
@@ -92,12 +119,41 @@ body::-webkit-scrollbar {
 
 .landing .middle {}
 
-.landing #cardTwo .left {
+.landing #intro .left {
     display: none;
 }
 
-.landing #cardOne {
+.landing #taskMan {
     display: none;
+}
+
+.landing #inso {
+    display: none;
+}
+
+.landing #inso .left {
+    width: 50vw;
+    margin: 0;
+}
+
+.landing #inso .right {
+    width: initial;
+}
+
+.landing #inso .left .topic {
+    font-size: 2.25vw;
+    font-family: "Amatic SC";
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    color: white;
+}
+
+.landing #inso .left .description {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.5vw;
+    color: #eeeeee;
+    letter-spacing: 1px;
 }
 
 .landing .middle .card {
@@ -121,18 +177,20 @@ body::-webkit-scrollbar {
 }
 
 .landing .middle .card .right {
-    width: 50vw;
+    width: 55vw;
 }
 
 .landing .middle .card .right .topic {
-    font-size: 2.4vw;
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 2.25vw;
+    font-family: "Amatic SC";
+    font-family: 'Lato', sans-serif;
     position: relative;
     color: white;
 }
 
 .landing .middle .card .right .description {
     font-family: 'Open Sans', sans-serif;
+    font-family: 'PT Sans Narrow', sans-serif;
     font-size: 1.5vw;
     color: #eeeeee;
     letter-spacing: 1px;
@@ -143,6 +201,8 @@ body::-webkit-scrollbar {
     bottom: 3.5%;
     left: 2%;
     font-family: 'Lato', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: "Permanent Marker";
 }
 
 .landing .email a {
@@ -165,6 +225,7 @@ body::-webkit-scrollbar {
     color: #f3f3f3;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    font-family: "Permanent Marker";
 }
 
 .landing .git-code a:hover {
@@ -172,7 +233,17 @@ body::-webkit-scrollbar {
 }
 
 .landing .git-code a:nth-child(1) {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Amatic SC', sans-serif; */
+    font-size: 1.55vw;
+}
+
+.landing .git-code a:nth-child(2) {
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.landing .git-code a:nth-child(3) {
+    /* font-family: 'Shadows Into Light Two', sans-serif; */
+    font-size: 1.55vw;
 }
 
 @media only screen and (max-width: 768px) {
@@ -190,7 +261,7 @@ body::-webkit-scrollbar {
         width: 25vw;
         height: 35vh;
     }
-    .landing .middle #cardTwo .right {
+    .landing .middle #intro .right {
         width: 80vw;
     }
     .landing .middle .card .right .topic {
@@ -227,7 +298,7 @@ body::-webkit-scrollbar {
 }
 
 #section-header span {
-    text-decoration: line-through;
+    text-decoration: underline;
     cursor: default;
 }
 
