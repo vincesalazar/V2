@@ -72,7 +72,7 @@ window.addEventListener('load', () => {
     // END LANDING ANIME
     // START OF CAROUSEL ANIME
     var ttl = gsap.timeline({
-        delay: 16.8,
+        delay: 16.79,
         repeat: 2000,
         repeatDelay: 0,
     });
@@ -110,7 +110,7 @@ window.addEventListener('load', () => {
     ttl.to("#inso .left", { x: -100, opacity: 0 }, ">+8");
     ttl.to("#inso .right", { x: 100, opacity: 0 }, "<");
     ttl.to("#inso", { display: "none" }, ">")
-        // ADD ANOTHER CARD RIGHT UNDER THIS HERE
+        // ADD ANOTHER CARD RIGHT UNDER THIS HERE, THIS IS WHERE THE INTRO CARD REPEATS
     ttl.to("#intro", {
         display: "flex"
     }, ">");
@@ -187,7 +187,7 @@ window.addEventListener('load', () => {
         ftl.fromTo(rights[i], { x: 100, opacity: 0 }, { x: 0, opacity: 1 }, "<");
         var scene = new ScrollMagic.Scene({
                 triggerElement: e,
-                triggerHook: .08,
+                triggerHook: .175,
                 duration: '',
             })
             .addIndicators({
