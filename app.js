@@ -1,4 +1,8 @@
 var max768;
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.defaults({
+    toggleActions: "play resume resume reverse",
+});
 
 window.addEventListener('load', () => {
     // LOADING PAGE
@@ -54,6 +58,8 @@ window.addEventListener('load', () => {
         opacity: 1,
         ease: "back"
     }, "<");
+    console.log("under this is the tl duration for the opening anime");
+    console.log(tl.duration());
     tl.fromTo(".modal-container", { display: "none" }, { display: "flex" }, "<")
     tl.fromTo(".projects", { display: "none" }, { display: "block" }, "<")
     tl.to("#intro .topic", {
@@ -72,7 +78,7 @@ window.addEventListener('load', () => {
     // END LANDING ANIME
     // START OF CAROUSEL ANIME
     var ttl = gsap.timeline({
-        delay: 16.79,
+        delay: 16.75,
         repeat: 2000,
         repeatDelay: 0,
     });
@@ -136,10 +142,10 @@ window.addEventListener('load', () => {
         // LIGHTS FLUTTER OUT ANIME -- FIRST SCROLL SCENE
     var controller = new ScrollMagic.Controller();
     var fsl = gsap.timeline({});
-    fsl.to(".name", { opacity: 0, ease: "bounce", duration: .3 });
-    fsl.to(".git-code", { opacity: 0, ease: "bounce", duration: .6 }, "<");
+    fsl.to(".name", { opacity: 0, ease: "bounce", duration: .3, });
     fsl.to(".top-right", { opacity: 0, ease: "bounce", duration: .9 }, "<");
-    fsl.to(".email", { opacity: 0, ease: "bounce", duration: .7 }, "<");
+    fsl.to(".git-code", { opacity: 0, ease: "bounce", duration: .6, }, "<");
+    fsl.to(".email", { opacity: 0, ease: "bounce", duration: .3, }, "<")
     var scene = new ScrollMagic.Scene({
             triggerElement: '.top-right',
             triggerHook: 0,
@@ -154,50 +160,23 @@ window.addEventListener('load', () => {
         .setTween(fsl)
         .addTo(controller);
     // END FIRST SCROLL SCENE
-    // FOR SECTION HEADERS ANIME -- SECOND SCROLL SCENE
-    var th = document.querySelectorAll(".t-h");
-    th.forEach((e, i) => {
-            const headers = document.querySelectorAll("#section-header");
-            let htl = gsap.timeline();
-            htl.fromTo(headers[i], { opacity: 0, y: 100 }, { opacity: 1, y: 0 });
-            var scene = new ScrollMagic.Scene({
-                    triggerElement: e,
-                    triggerHook: .4,
-                    duration: '',
-                })
-                .addIndicators({
-                    colorTrigger: 'transparent', //transparent
-                    colorStart: 'transparent',
-                    colorEnd: 'transparent',
-                    indent: 5
-                })
-                .setTween(htl)
-                .addTo(controller);
-        })
-        // END SECOND SCENE
-        // FOR PROJECTS LEFT AND RIGHT -- THIRD SCROLL SCENE
-    var trigger = document.querySelectorAll(".trigger");
-    console.log("this is the query selector ALL .trigger" + ' ' + trigger);
-    trigger.forEach((e, i) => {
-        const projects = document.querySelectorAll(".project");
-        const lefts = document.querySelectorAll(".projects .left");
-        const rights = document.querySelectorAll(".projects .right");
-        const ftl = gsap.timeline();
-        ftl.fromTo(lefts[i], { x: -100, opacity: 0 }, { x: 0, opacity: 1 });
-        ftl.fromTo(rights[i], { x: 100, opacity: 0 }, { x: 0, opacity: 1 }, "<");
-        var scene = new ScrollMagic.Scene({
-                triggerElement: e,
-                triggerHook: .175,
-                duration: '',
-            })
-            .addIndicators({
-                colorTrigger: 'transparent', //transparent
-                colorStart: 'transparent',
-                colorEnd: 'transparent',
-                indent: 5
-            })
-            .setTween(ftl)
-            .addTo(controller);
-    });
-    // END OF THIRD SCENE
+    // gsap trial // scrolltrigger
+    setTimeout(() => {
+        var projects = document.querySelectorAll(".project");
+        console.log(projects)
+        var i;
+        for (i = 0; i < projects.length; i++) {
+            let f = projects[i].children[0];
+            let s = projects[i].children[1];
+            gsap.fromTo(f, { opacity: 0, x: -100 }, { opacity: 1, x: 0, scrollTrigger: { trigger: f, markers: 0, start: "20% 80%" } })
+            gsap.fromTo(s, { opacity: 0, x: 100 }, { opacity: 1, x: 0, scrollTrigger: { trigger: s, markers: 0, start: "20% 80%" } })
+        }
+        // FOR SECTION HEADERS ANIME -- SECOND SCROLL SCENE
+        var headers = document.querySelectorAll("#section-header");
+        for (i = 0; i < headers.length; i++) {
+            gsap.fromTo(headers[i], { opacity: 0, scale: .9, y: -100 }, { opacity: 1, scale: 1, y: 0, scrollTrigger: { trigger: headers[i], markers: false, start: "20% 80%" } })
+        }
+        gsap.fromTo("#contact h1", { opacity: 0, x: -100 }, { opacity: 1, x: 0, scrollTrigger: { trigger: "#contact h1", markers: false, start: "20% 80%" } })
+        gsap.fromTo("form", { opacity: 0, y: 100 }, { opacity: 1, y: 0, scrollTrigger: { trigger: "form", markers: false, start: "-20% 80%" } })
+    }, 4050);
 });
