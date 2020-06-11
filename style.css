@@ -95,6 +95,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .landing .name {
@@ -104,7 +105,7 @@ body::-webkit-scrollbar {
     font-size: 2vw;
     color: #e4e4e4;
     cursor: default;
-    font-family: 'Permanent Marker', sans-serif;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .landing .top-right {
@@ -113,13 +114,7 @@ body::-webkit-scrollbar {
     right: 2%;
     font-size: 1.5vw;
     color: #fffffffd;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Shadows Into Light Two', cursive;
-    font-family: "Permanent Marker";
-}
-
-.landing .top-right a:hover {
-    opacity: .6;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .landing .middle {}
@@ -198,18 +193,9 @@ body::-webkit-scrollbar {
     position: absolute;
     bottom: 3.5%;
     left: 2%;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Indie Flower', cursive;
-    font-family: "Permanent Marker";
-}
-
-.landing .email a {
+    font-family: 'Permanent Marker', cursive;
     font-size: 1.5vw;
     color: #fffffffd;
-}
-
-.landing .email a:hover {
-    opacity: .6;
 }
 
 .landing .git-code {
@@ -221,13 +207,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: space-between;
     color: #f3f3f3;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: "Permanent Marker";
-}
-
-.landing .git-code a:hover {
-    color: #ffffffbb;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .landing .git-code a:nth-child(1) {
@@ -362,7 +342,7 @@ body::-webkit-scrollbar {
         height: 30vh;
     }
     .projects .project .laptop-container {
-        height: 35vh;
+        height: 30vh;
         width: 35vw;
     }
 }
@@ -388,6 +368,7 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
     display: none;
+    overflow-y: hidden;
 }
 
 .modal-container h1 {
@@ -413,7 +394,11 @@ body::-webkit-scrollbar {
     background-color: #00000044;
     position: relative;
     border-radius: 3px;
-    box-shadow: white 0px 0px 0px .4px;
+    /* box-shadow: white 0px 0px 0px .4px; */
+    border-top: 1px #ffffffaa solid;
+    border-left: 1px #ffffffaa solid;
+    border-right: 1px #ffffff55 solid;
+    border-bottom: 1px #ffffff55 solid;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -422,7 +407,7 @@ body::-webkit-scrollbar {
 
 @media (min-width:769px) {
     .modal-container form {
-        width: 60%;
+        width: 50%;
     }
 }
 
