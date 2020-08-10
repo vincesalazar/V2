@@ -354,11 +354,6 @@ body::-webkit-scrollbar {
 /* FORM SECTION, MADE IN SCSS */
 
 .modal-container {
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100vw; */
     position: relative;
     padding: 5vh 3rem 5vh 3rem;
     box-sizing: border-box;
