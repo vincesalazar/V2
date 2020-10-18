@@ -174,6 +174,8 @@ window.addEventListener('load', () => {
     // END FIRST SCROLL SCENE
     // gsap trial // scrolltrigger
     setTimeout(() => {
+        // gsap.to(".triangle", {backgroundPositionX:"200px"})
+        gsap.to(".triangle", 5, {backgroundPositionX:"-200px", scrollTrigger:{markers:true,trigger:"", scrub:true}})
         var projects = document.querySelectorAll(".project");
         console.log(projects)
         var i;
@@ -190,5 +192,6 @@ window.addEventListener('load', () => {
         }
         gsap.fromTo("#contact h1", { opacity: 0, x: -100 }, { opacity: 1, x: 0, scrollTrigger: { trigger: "#contact h1", markers: false, start: "20% 80%" } })
         gsap.fromTo("form", { opacity: 0, y: 100 }, { opacity: 1, y: 0, scrollTrigger: { trigger: "form", markers: false, start: "-20% 80%" } })
+        
     }, 3400);
 });

@@ -105,6 +105,15 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
 }
 
+.landing .triangle {
+  position: fixed;
+  background-image: url("./triangle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
 .landing .name {
   position: absolute;
   top: 3.5%;
@@ -228,10 +237,6 @@ body::-webkit-scrollbar {
 .landing .git-code a:nth-child(1) {
   /* font-family: 'Amatic SC', sans-serif; */
   font-size: 1.55vw;
-}
-
-.landing .git-code a:nth-child(2) {
-  /* font-family: 'Roboto', sans-serif; */
 }
 
 .landing .git-code a:nth-child(3) {
