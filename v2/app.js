@@ -174,10 +174,11 @@ window.addEventListener('load', () => {
     // END FIRST SCROLL SCENE
     // gsap trial // scrolltrigger
     setTimeout(() => {
+        // FOR TRIANGLE
         // gsap.to(".triangle", {backgroundPositionX:"200px"})
-        gsap.to(".triangle", 5, {backgroundPositionX:"-200px", scrollTrigger:{markers:true,trigger:"", scrub:true}})
+        gsap.to(".triangle", 5, {backgroundPositionX:"-200px", width:"150vw", scrollTrigger:{markers:true,trigger:".projects", scrub:true, start:"-20% 100%"}})
         var projects = document.querySelectorAll(".project");
-        console.log(projects)
+        // console.log(projects)
         var i;
         for (i = 0; i < projects.length; i++) {
             let f = projects[i].children[0];

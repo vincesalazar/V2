@@ -110,8 +110,9 @@ body::-webkit-scrollbar {
   background-image: url("./triangle.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
+  z-index: -2;
 }
 
 .landing .name {
@@ -287,6 +288,7 @@ body::-webkit-scrollbar {
   display: none;
   padding: 2rem 0;
   overflow-x: hidden;
+  z-index: 3;
 }
 
 #section-header {
