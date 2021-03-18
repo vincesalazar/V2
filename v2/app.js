@@ -152,25 +152,25 @@ window.addEventListener('load', () => {
         }, "<")
         // END OF CAROUSEL
         // LIGHTS FLUTTER OUT ANIME -- FIRST SCROLL SCENE
-    var controller = new ScrollMagic.Controller();
-    var fsl = gsap.timeline({});
-    fsl.to(".name", { opacity: 0, ease: "bounce", duration: .3, });
-    fsl.to(".top-right", { opacity: 0, ease: "bounce", duration: .9 }, "<");
-    fsl.to(".git-code", { opacity: 0, ease: "bounce", duration: .6, }, "<");
-    fsl.to(".email", { opacity: 0, ease: "bounce", duration: .3, }, "<")
-    var scene = new ScrollMagic.Scene({
-            triggerElement: '.top-right',
-            triggerHook: 0,
-            duration: "",
-        })
-        .addIndicators({
-            colorTrigger: 'transparent', //transparent
-            colorStart: 'transparent',
-            colorEnd: 'transparent',
-            indent: 5
-        })
-        .setTween(fsl)
-        .addTo(controller);
+    // var controller = new ScrollMagic.Controller();
+    // var fsl = gsap.timeline({});
+    // fsl.to(".name", { opacity: 0, ease: "bounce", duration: .3, });
+    // fsl.to(".top-right", { opacity: 0, ease: "bounce", duration: .9 }, "<");
+    // fsl.to(".git-code", { opacity: 0, ease: "bounce", duration: .6, }, "<");
+    // fsl.to(".email", { opacity: 0, ease: "bounce", duration: .3, }, "<")
+    // var scene = new ScrollMagic.Scene({
+    //         triggerElement: '.top-right',
+    //         triggerHook: 0,
+    //         duration: "",
+    //     })
+    //     .addIndicators({
+    //         colorTrigger: 'transparent', //transparent
+    //         colorStart: 'transparent',
+    //         colorEnd: 'transparent',
+    //         indent: 5
+    //     })
+    //     .setTween(fsl)
+    //     .addTo(controller);
     // END FIRST SCROLL SCENE
     // gsap trial // scrolltrigger
     setTimeout(() => {
