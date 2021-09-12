@@ -176,7 +176,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         // FOR TRIANGLE
         // gsap.to(".triangle", {backgroundPositionX:"200px"})
-        gsap.to(".triangle", 5, {backgroundPositionX:"-200px", width:"150vw", scrollTrigger:{markers:true,trigger:".projects", scrub:true, start:"-20% 100%"}})
+        gsap.to(".triangle", 5, {backgroundPositionX:"-200px", width:"150vw", scrollTrigger:{markers:false,trigger:".projects", scrub:true, start:"-20% 100%"}})
         var projects = document.querySelectorAll(".project");
         // console.log(projects)
         var i;
